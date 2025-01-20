@@ -1,0 +1,11 @@
+<div (click)="resetGrid()" class="backMocal">
+  <div class="modal">
+    <h3 *ngIf="winner !== 'EGALITE'; else egaliteTemplate">winner : {{ winner }} !</h3>
+    <ng-template #egaliteTemplate>
+      <h3>{{ winner }} !</h3>
+    </ng-template>
+    <p>{{player1?.name}} : {{player1?.score}}</p>
+    <p>{{player2?.name}} : {{player2?.score}}</p>
+    <button (click)="resetGrid()">Rematch</button>
+  </div>
+</div>

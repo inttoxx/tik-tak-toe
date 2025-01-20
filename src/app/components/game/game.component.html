@@ -1,0 +1,34 @@
+<div>
+  <initModal
+    (playerNameChange)="startGame($event)"
+    *ngIf="showInitModal"
+  />
+  <resultModal
+    (reset)="reset()"
+    *ngIf="showResultModal"
+    [player1]="player1"
+    [player2]="player2"
+    [winner]="winner"
+  />
+  <div *ngIf="!showInitModal">
+    <p>turn : {{playerTurn?.name}} </p>
+    <p>({{playerTurn?.symbole}})</p>
+  </div>
+  <div class="grid">
+    <div
+      (click)="play($event, i)"
+      *ngFor ="let boxId of boxIds; let i = index"
+      [id]="boxId"
+      class="box">
+    </div>
+  </div>
+  <div *ngIf="!showInitModal">
+    <p>
+      {{player1.name}} : {{player1.score}}
+    </p>
+    <p>
+      {{player2.name}} : {{player2.score}}
+    </p>
+  </div>
+</div>
+

@@ -1,0 +1,153 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+p {
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.content {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border: 2px solid #ccc;
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.box:hover {
+  background-color: #f0f0f0;
+  transform: scale(1.05);
+}
+
+.box:active {
+  background-color: #ddd;
+}
+
+.box.allreadySelected {
+  cursor: not-allowed;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 5px;
+  margin: 20px auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.box.X {
+  background-color: red;
+}
+
+.box.O {
+  background-color: blue;
+}
+
+.backMocal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.versusChoice {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  justify-content: center;
+  align-items: flex-start;
+  margin: auto auto 1rem;
+}
+
+.iaDifficulty {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.iaDifficultyInupt {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.versusChoice div {
+  margin-bottom: 1rem;
+}
+
+.modal {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+}
+
+.playerForm label {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #333333;
+}
+
+.playerForm input {
+  width: 80%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #333333;
+}
+
+button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.playerForm button:hover {
+  background-color: #0056b3;
+}
+
+div > p {
+  margin: 5px 0;
+  color: #444;
+}

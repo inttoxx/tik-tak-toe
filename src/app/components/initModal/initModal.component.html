@@ -1,0 +1,53 @@
+<div class="backMocal">
+  <div class="modal">
+    <div class="versusChoice">
+      <h3>play vs :</h3>
+      <div>
+        <input [(ngModel)]="versus" id="ia" name="versus" type="radio" value="IA">
+        <label for="ia">IA</label>
+      </div>
+      <div>
+        <input [(ngModel)]="versus" id="player" name="versus" type="radio" value="player">
+        <label for="player">Player</label>
+      </div>
+    </div>
+    <div class="playerForm">
+      <label for="player1">
+        player 1
+        <input
+          (keyup.enter)="validatePlayerName()"
+          [(ngModel)]="player1Name"
+          id="player1"
+          placeholder="name"
+          type="text">
+      </label>
+      <ng-container *ngIf="versus === 'player'">
+        <label for="player2">
+          player 2
+          <input
+            (keyup.enter)="validatePlayerName()"
+            [(ngModel)]="player2Name"
+            id="player2"
+            placeholder="name"
+            type="text">
+        </label>
+      </ng-container>
+      <div *ngIf="versus === 'IA' || versus === 'IAeasy' || versus === 'IAmedium' || versus === 'IAimpossible'" class="iaDifficulty">
+        <p>dificulté de l'IA</p>
+        <div class="iaDifficultyInupt">
+          <input [(ngModel)]="iaDifficulty" id="easy" name="iaDifficulty" type="radio" value="easy">
+          <label for="easy">easy</label>
+        </div>
+        <div class="iaDifficultyInupt">
+          <input [(ngModel)]="iaDifficulty" id="medium" name="iaDifficulty" type="radio" value="medium">
+          <label for="medium">medium</label>
+        </div>
+        <div class="iaDifficultyInupt">
+          <input [(ngModel)]="iaDifficulty" id="impossible" name="iaDifficulty" type="radio" value="impossible">
+          <label for="impossible">impossible</label>
+        </div>
+      </div>
+      <button (click)="validatePlayerName()">Valider</button>
+    </div>
+  </div>
+</div>
