@@ -45,7 +45,7 @@ export class GameComponent {
     this.playerTurn = this.players[Math.floor(Math.random() * 2)];
     if (this.playerTurn.name === "IAeasy"
       || this.playerTurn.name === "IAmedium"
-      || this.playerTurn.name === "IAimossible") {
+      || this.playerTurn.name === "IAimpossible") {
       this.selectIaToPlay()
     }
   }
@@ -85,7 +85,7 @@ export class GameComponent {
     if (this.playerTurn?.name === "IAmedium") {
       setTimeout(() => this.aiPlayMedium(), 500);
     }
-    if (this.playerTurn?.name === "IAimossible") {
+    if (this.playerTurn?.name === "IAimpossible") {
       setTimeout(() => this.aiPlayImossible(), 500);
     }
   }
@@ -99,7 +99,7 @@ export class GameComponent {
       if (boxA?.innerHTML && boxA.innerHTML == boxB?.innerHTML && boxA.innerHTML == boxC?.innerHTML) {
         this.players.forEach(player => {
           {
-            if (player.name === this.playerTurn?.name) {
+            if (player.symbole === this.playerTurn?.symbole) {
               player.score++
             }
           }
@@ -136,7 +136,7 @@ export class GameComponent {
   }
 
   aiPlayImossible() {
-    if (this.playerTurn?.name !== "IAimossible" || this.showResultModal) {
+    if (this.playerTurn?.name !== "IAimpossible" || this.showResultModal) {
       return;
     }
     this.aiInProgress = true;

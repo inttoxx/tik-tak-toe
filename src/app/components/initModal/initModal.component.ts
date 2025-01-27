@@ -27,12 +27,14 @@ export class InitModalComponent {
     } else if ((this.versus + this.iaDifficulty == "IAeasy"
         || this.versus + this.iaDifficulty == "IAmedium"
         || this.versus + this.iaDifficulty == "IAimpossible")
-      && this.player1Name == this.versus + this.iaDifficulty) {
+      && this.player1Name == "IAeasy"
+      || this.player1Name == "IAmedium"
+      || this.player1Name == "IAimpossible") {
       alert('Nom invalide');
     } else if ((this.versus + this.iaDifficulty == "IAeasy"
         || this.versus + this.iaDifficulty == "IAmedium"
         || this.versus + this.iaDifficulty == "IAimpossible")
-      && this.player1Name.trim() && this.player1Name != this.versus + this.iaDifficulty) {
+      && this.player1Name.trim()) {
       this.playerNameChange.emit({player1: this.player1Name, player2: this.versus + this.iaDifficulty});
     } else {
       alert('Les noms des joueurs ne peuvent pas être vides.');
